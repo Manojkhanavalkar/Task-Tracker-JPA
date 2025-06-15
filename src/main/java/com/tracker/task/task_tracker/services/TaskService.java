@@ -57,4 +57,15 @@ public class TaskService {
         List<Task> task=taskRepository.findByCreatedAt(createdAt);
         return task;
     }
+
+    //search tasks
+    public List<Task> searchByTitle(String titleKeyword){
+        List<Task> tasks=taskRepository.findByTitleContainingIgnoreCase(titleKeyword);
+        return tasks;
+    }
+
+    public List<Task> getByCreatedDateBetween(LocalDateTime start,LocalDateTime end){
+        List<Task> tasks=taskRepository.findByCreatedAtBetween(start,end);
+        return tasks;
+    }
 }
