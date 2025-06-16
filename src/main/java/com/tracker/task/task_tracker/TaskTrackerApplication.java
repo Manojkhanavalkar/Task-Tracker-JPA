@@ -1,9 +1,10 @@
 package com.tracker.task.task_tracker;
 
-import com.tracker.task.task_tracker.enitities.Certificate;
-import com.tracker.task.task_tracker.enitities.Student;
+import com.tracker.task.task_tracker.enitities.*;
 import com.tracker.task.task_tracker.repositories.CertificateRepo;
+import com.tracker.task.task_tracker.repositories.IpAddressRepo;
 import com.tracker.task.task_tracker.repositories.StudentRepo;
+import com.tracker.task.task_tracker.repositories.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -19,6 +20,11 @@ public class TaskTrackerApplication implements CommandLineRunner {
 
 	@Autowired
 	private CertificateRepo certificateRepo;
+
+	@Autowired
+	private UserRepo userRepo;
+	@Autowired
+	private IpAddressRepo ipAddressRepo;
 
 	public static void main(String[] args) {
 		SpringApplication.run(TaskTrackerApplication.class, args);
@@ -51,10 +57,32 @@ public class TaskTrackerApplication implements CommandLineRunner {
 //		Certificate certificate=student.getCertificate();
 //		System.out.println("Certificate details: "+certificate.getTitle());
 
-		Certificate certificate=certificateRepo.findByTitleLike("%Java%");
-		System.out.println("certificate is : "+certificate.getTitle());
+//		Certificate certificate=certificateRepo.findByTitleLike("%Java%");
+//		System.out.println("certificate is : "+certificate.getTitle());
+//
+//		Student student=certificate.getStudent();
+//		System.out.println("Student info "+student.getName());
 
-		Student student=certificate.getStudent();
-		System.out.println("Student info "+student.getName());
+//		User user=new User();
+//		user.setName("Raju");
+//		IpAddress ipAddress=new IpAddress();
+//		ipAddress.setIpAddressLoc("Pune");
+//
+//		IpAddress ipAddress1=ipAddressRepo.save(ipAddress);
+//		System.out.println("Ip address  saved");
+//		user.setIpAddress(ipAddress1);
+//		userRepo.save(user);
+//		System.out.println("User saved!! with ipaddress");
+
+		Category category=new Category();
+		category.setCategory_name("Electronics");
+		Product product=new Product();
+
+
+
+
+
+
+
 	}
 }
